@@ -14,3 +14,10 @@ This Python script adjusts the temperature of JPEG images, simulating warmer or 
 ```bash
 python adjust_temperature.py <input_image_path> <output_image_path> <temperature>
 
+
+## Example 
+
+```bash
+python adjust_temperature.py input_image.jpg output_image.jpg 10
+
+
