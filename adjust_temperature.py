@@ -1,5 +1,17 @@
-from PIL import Image
 import sys
+
+try:
+    from PIL import Image
+except ImportError:
+    print("Pillow not found. Installing...")
+    try:
+        from subprocess import run
+        run(["pip", "install", "Pillow"], check=True)
+        print("Pillow installed successfully.")
+        from PIL import Image  # Import Image after successful installation
+    except Exception as e:
+        print(f"Error installing Pillow: {e}")
+        sys.exit(1)
 
 def adjust_temperature(input_path, output_path, temperature):
     try:
